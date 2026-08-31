@@ -1,0 +1,17 @@
+[project]
+name = "tcrl-docs-site"
+version = "0.1.0"
+description = "External bilingual documentation site for TCRL operation manuals"
+requires-python = ">=3.11"
+dependencies = [
+  "sphinx>=9.0.4",
+  "pydata-sphinx-theme>=0.20.0",
+  "myst-parser>=4.0.0",
+  "sphinx-copybutton>=0.5.2",
+  "sphinx-design>=0.6.1"
+]
+
+[tool.tcrl-docs]
+recommended_host = "github-pages"
+alternative_host = "read-the-docs"
+source_languages = ["zh", "en"]

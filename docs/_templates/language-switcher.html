@@ -1,0 +1,23 @@
+<div class="tcrl-language-switcher" role="navigation" aria-label="Language switcher">
+  <button class="tcrl-lang-button" type="button" data-target-lang="{{ tcrl_other_lang }}">
+    {{ tcrl_other_lang_label }}
+  </button>
+</div>
+<script>
+(function () {
+  var buttons = document.querySelectorAll(".tcrl-lang-button");
+  buttons.forEach(function (button) {
+    button.addEventListener("click", function () {
+      var target = button.getAttribute("data-target-lang");
+      var parts = window.location.pathname.split("/");
+      var index = parts.findIndex(function (part) { return part === "zh" || part === "en"; });
+      if (index >= 0) {
+        parts[index] = target;
+        window.location.href = parts.join("") ? parts.join("/") + window.location.search + window.location.hash : "/";
+      } else {
+        window.location.href = target + "/main/index.html";
+      }
+    });
+  });
+})();
+</script>

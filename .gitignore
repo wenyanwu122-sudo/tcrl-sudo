@@ -1,0 +1,8 @@
+.venv/
+site/
+site-*/
+site_public/
+site-public*/
+.DS_Store
+__pycache__/
+*.pyc
